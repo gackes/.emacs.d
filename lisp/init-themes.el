@@ -1,6 +1,6 @@
 ;; init-themes.el Ö÷Ìâ
 
-(require 'all-the-icons)
+(require-package 'all-the-icons)
 (require-package 'doom-themes)
 (require-package 'doom-modeline)
 (setq custom-safe-themes t)
