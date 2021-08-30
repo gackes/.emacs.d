@@ -7,6 +7,6 @@
 
   (with-eval-after-load 'flyspell
 			 (define-key flyspell-mode-map (kbd "C-;") nil)
-li			 (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
+			 (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
 
 (provide 'init-spelling)
