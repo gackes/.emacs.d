@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name:for_for
+# key: forf
+# --
+for(${1:int i = 0}; ${2:i < N}; ${3:i++})
+{
+    for(${4:int j = 0}; ${5:j < M}; ${6:j++})
+    {
+        $0
+    }
+}

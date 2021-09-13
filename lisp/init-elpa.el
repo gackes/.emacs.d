@@ -9,7 +9,11 @@
 
 ;; package-user-dir 为包含lisp包的目录，应该是绝对路径
 
-(add-to-list 'package-archives '("melpa" . "https://elpa.emacs-china.org/melpa/") t)
+(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+			  ("melpa" . "https://elpa.emacs-china.org/melpa/")))
+;; (add-to-list 'package-archives '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;				 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")) t)
+;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; add-to-list LIST-VAR ELEMENT &optional APPEND COMPARE-FN
 ;; APPEND如果为nil，则ELEMNENT会加在LIST-VAR的开头；否则，在结尾。

@@ -1,4 +1,6 @@
-;; init-misc.el 混合的配置
+;;; init-misc.el --- 混合的配置
+;;; Commentary:
+;;; Code:
 
 (add-auto-mode 'tcl-mode "^Portfile\\'")
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -16,5 +18,24 @@
 (when (maybe-require-package 'rainbow-delimiters)
   (add-hook 'after-init-hook #'rainbow-delimiters-mode))
 
-(provide 'init-misc)
+;; (when (maybe-require-package 'hungry-delete)
+;;   (add-hook 'prog-mode-hook #'(lambda() (hungry-keyboard prog-mode-map)))
+;;   (add-hook 'c-mode-hook #'(lambda () (hungry-keyboard c-mode-map)))
+;;   (add-hook 'c++-mode-hook #'(lambda() (hungry-keyboard c++-mode-map))))
 
+(add-hook 'prog-mode-hook #'(lambda () (hungry-delete-mode t)))
+
+(electric-pair-mode t)
+(setq electric-pair-pairs '((?\" . ?\")
+			    (?\< . ?\>)
+			    (?\( . ?\))
+			    (?\[ . ?\])
+			    (?\{ . ?\})
+			    (?\' . ?\')
+			    ))
+
+(show-paren-mode 1)
+(setq show-paren-style 'paranthesis)
+
+(provide 'init-misc)
+;;; init-misc.el ends here

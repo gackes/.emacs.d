@@ -1,0 +1,6 @@
+# key: tyst
+# name: typedef
+# --
+typedef struct ${1:StructName}{
+    $0
+} *$1Ptr;

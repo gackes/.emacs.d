@@ -1,4 +1,6 @@
-;;; init-utils.el Helper function and command
+;;; init-utils.el --- Helper function and command
+;;; Commentary:
+;;; Code:
 
 (define-obsolete-function-alias 'after-load 'with-eval-after-load "")
 
@@ -16,7 +18,7 @@
 ;; REGEXP是正则，用于寻找文件。为该文件指定模式函数。
 
 (defun pss/set-major-mode-name (name)
-  "Override the major mode NAME in this buffer"
+  "Override the major mode NAME in this buffer."
   (setq-local mode-name name))
 
 ;; mode-name 目前buffer的主mode名
@@ -65,15 +67,15 @@
 ;; kill-this-buffer 关闭当前buffer
 
 (defun rename-this-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visitiong to NEW_NAME."
+  "Renames both current buffer and file it's visitiong to NEW-NAME."
   (interactive "sNew name:")
   (let ((name (buffer-name))
 	(file-name (buffer-file-name)))
     (unless file-name
       (error "Buffer '%s' is not visiting a file!" name))
     (progn
-      (when (file-exists-p filename)
-	(rename-file filename new-name 1))
+      (when (file-exists-p file-name)
+	(rename-file file-name new-name 1))
       (set-visited-file-name new-name)
       (rename-buffer new-name))))
 
@@ -92,9 +94,10 @@
       (if (and (fboundp 'tramp-tramp-file-p)
 	       (tramp-tramp-file-p file-name))
 	(error "Cannot open tramp file")
-	(browse-url (concat "file://" filename)))))
+	(browse-url (concat "file://" file-name)))))
 
 ;; tramp-tramp-file-p NAME
 ;; 如果NAME符合Tramp File Name Syntax，则返回t
 
 (provide 'init-utils)
+;;; init-utils ends here

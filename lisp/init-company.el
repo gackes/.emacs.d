@@ -1,4 +1,6 @@
-;; init-company.el ²¹È«
+;;; init-company.el --- ²¹È«
+;;; Commentary:
+;;; Code:
 
 (setq tab-always-indent 'complete)
 
@@ -23,6 +25,7 @@
     (define-key company-active-map (kbd "C-p") 'company-select-previous)
     (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
     (define-key company-active-map (kbd "M-.") 'company-show-location)
+;;    (define-key company-active-map (kbd "TAB")  'yas-expand)
     (setq-default company-dabbrev-other-buffers 'all
                   company-tooltip-align-annotations t))
   (global-set-key (kbd "M-C-/") 'company-complete)
@@ -30,3 +33,4 @@
     (add-hook 'after-init-hook 'company-quickhelp-mode)))
 
 (provide 'init-company)
+;;; init-company.el ends here

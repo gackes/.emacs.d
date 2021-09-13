@@ -1,4 +1,6 @@
 ;;; init.el -- 装载全部配置文件
+;;; Commentary:
+;;; Code:
 
 (let ((minversion "25.1"))
   (when (version< emacs-version minversion)
@@ -43,6 +45,9 @@
 ;; 设置包下载网站，下载函数
 (require 'init-elpa)
 (require 'init-exec-path)
+;; 设置环境变量
+(require 'init-env)
+
 
 ;; 允许用户提供可选的"init-preload-local.el"
 (require 'init-preload-local nil t)
@@ -60,6 +65,8 @@
 ;; 设置隐藏工具栏、菜单栏、显示行号
 (require 'init-gui-frames)
 (require 'init-dired)
+;; 设置跟踪最近访问的文件
+(require 'init-recentf)
 
 ;; 语法检查
 (require 'init-flycheck)
@@ -67,6 +74,10 @@
 (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-lsp)
+;; 设置代码缩写
+(require 'init-yasnippet)
+
+
 
 ;; 语言相关的配置
 (require 'init-c)
@@ -91,6 +102,10 @@
 ;; vim有关的插件
 (require 'init-evil)
 
+;; Org-mode的配置
+(require 'init-org)
+
 (message "init文件装载完成。")
         
 (provide 'init)
+;;; init.el ends here

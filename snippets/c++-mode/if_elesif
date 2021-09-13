@@ -1,0 +1,15 @@
+# key: ifei
+# name: if_elesif
+# --
+if(${1:Condition1})
+{
+    $2
+}
+else if(${3:Condition2})
+{
+    $4
+}
+else
+{
+    $0
+}
